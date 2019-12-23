@@ -1,12 +1,12 @@
-function plotComponents(I, er, ct, eb, cb)
+function plotComponents(I, er, cr, eb, cb)
     components = getAll(er, cr, eb, cb);
     L = length(components);
 
-    figure; subolot(2, L, 1); imshow(I);
+    f = figure;
     for num = 1:L 
         comp = components(num);
-        cutI = I(comp.up : comp.down, comp.left : comp.right);
-        subplot(2, L, L + num);
+        cutI = I(comp.up : comp.down, comp.left : comp.right, :);
+        subplot(1, L, num);
         imshow(cutI);
     end
 end

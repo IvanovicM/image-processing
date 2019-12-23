@@ -4,11 +4,17 @@ close all;
 clc;
 
 addpath('../utils/');
+addpath('diceUtils/');
    
-%% Iteratethrough all the images and save results
-for num = 1:12
-    name = sprintf('../data/dices/dice%d.jpg', num);
+%% Test both functions
+for num = 1:1
+    name = sprintf('../data/dice/dice%d.jpg', num);
     I = im2double(imread(name));
     
-    extract_dice_score(I, num);
+    [blueNumbers, redNumbers] = extractDiceScore(I);
+ 
+    bString = sprintf(repmat('%d ', 1, length(blueNumbers)), blueNumbers);
+    rString = sprintf(repmat('%d ', 1, length(redNumbers)), redNumbers);
+    fprintf('| image: %2d | blue: %6s | red: %6s |\n', ...
+            num, bString, rString);
 end

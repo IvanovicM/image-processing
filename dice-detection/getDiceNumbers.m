@@ -5,48 +5,46 @@ function numbers = getDiceNumbers(I, exist, components)
         L = length(components);
         numbers = zeros(1, L);
 
-        for num = 1:L 
-            com = components(num);
+        for compNum = 1:L 
+            com = components(compNum);
 
-            imagePart = I(com.up : com.down, com.left, com.right);
-            numbers(num) = getNumberOnImage(imagePart);
+            imagePart = I(com.up : com.down, com.left : com.right, :);
+            numbers(compNum) = getNumberOnImage(imagePart);
         end
     end
 end
 
-function number = getNumberOnImage(I)
+function number = getNumberOnImage(I, toFindCircles)
     J = preprocessImage(I);
-    number = numberOfRelevantComponents(J);
+    [J, number] = numberOfRelevantComponents(J);
+    
+    if nargin > 1 && toFindCircles
+        findAndPlotCircles(J);
+    end
 end
 
-function J = preprocessImage(I, toPlot)
+function J = preprocessImage(I)
     grayImagePart = rgb2gray(I);
     segmentedPart = segmentImage(grayImagePart);
 
     se = strel('line', 7, 7);
     dil = imdilate(segmentedPart, se);
     J = imerode(dil, se);
-
-    if nargin == 2 && toPlot = true
-        figure;
-        suplot(2, 2, 1); imshow(grayImagePart);
-        suplot(2, 2, 2); imshow(segmentedPart);
-        suplot(2, 2, 3); imshow(dil);
-        suplot(2, 2, 4); imshow(J);
-    end
 end
 
-function numberOfRelevantComponents(I)
+function [J, number] = numberOfRelevantComponents(I)
     [height, width] = size(I);
     cc = bwconncomp(1 - I);
     number = cc.NumObjects;
+    J = I;
 
     for com = 1:cc.NumObjects
-        allIdx = cc.PixelIdxList(com);
+        allIdx = cc.PixelIdxList{com};
         [row, col] = ind2sub(size(I), allIdx);
         if min(row) == 1 || max(row) == height || ...
-           min(col) == 1 || min(col) == width
+           min(col) == 1 || max(col) == width
             number = number - 1;
+            J(allIdx) = 1;
         end
     end
 end
@@ -54,4 +52,12 @@ end
 function J = segmentImage(I)
     [T, ~] = graythresh(I);
     J = I > T;
+end
+
+function findAndPlotCircles(I)
+    E = edge(I, 'canny');
+    [center, radius] = imfindcircles(E, [4, 20]);
+
+    figure; imshow(I);
+    viscircles(center, radius, 'Color', 'green');
 end
