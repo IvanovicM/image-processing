@@ -21,10 +21,10 @@ function shifted = shiftNeedleCoords(needle, middlePoint)
     p2(1) = p2(1) - middlePoint(1);
     p2(2) = -p2(2) + middlePoint(2);
     
-    shifted = orderPoints(p1, p2, middlePoint);
+    shifted = orderPoints(p1, p2);
 end
 
-function shifted = orderPoints(p1, p2, middlePoint)
+function shifted = orderPoints(p1, p2)
     mqs1 = sqrt(p1(1)^2 + p1(2)^2);
     mqs2 = sqrt(p2(1)^2 + p2(2)^2);
 
@@ -41,7 +41,7 @@ function angle = getAngle(needle)
     angle = atan2(needle.point2(1) - needle.point1(1), ...
                   needle.point2(2) - needle.point1(2));
     if angle < 0
-        angle = pi + abs(angle);
+        angle = 2*pi + angle;
     end
 end
 

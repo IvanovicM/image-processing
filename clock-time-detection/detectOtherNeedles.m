@@ -1,6 +1,6 @@
 function [minNeedle, hourNeedle] = detectOtherNeedles(I)
     lines = getLines(I, 2);    
-    % plotLines(I, lines, num, dir);
+    % plotLines(I, lines);
     [minNeedle, hourNeedle] = extractMinHourNeedle(lines);
     % plotMinHour(I, minNeedle, hourNeedle);
 end
@@ -30,8 +30,8 @@ function l = lineLength(line)
     l = sqrt((x1 - x2)^2 + (y1 - y2)^2);
 end
 
-function plotMinHour(I, minNeedle, hourNeedle, num, dir)
-    f = figure(num); imshow(I), hold on;
+function plotMinHour(I, minNeedle, hourNeedle)
+    figure(); imshow(I), hold on;
 
     xy = [minNeedle.point1; minNeedle.point2];
     plot(xy(:,1),xy(:,2), 'LineWidth', 2, 'Color', 'green');
@@ -40,6 +40,4 @@ function plotMinHour(I, minNeedle, hourNeedle, num, dir)
     
     legend('minute', 'hour');
     hold off;
-    
-    saveFigure(f, dir, 'minHourDetected.jpg');
 end
