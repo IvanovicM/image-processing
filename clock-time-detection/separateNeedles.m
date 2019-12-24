@@ -2,15 +2,17 @@ function [secNeedle, otherNeedles] = separateNeedles(I)
     Isegmented = segmentImage(rgb2gray(I));
     IwithoutBorder = removeNotRelevantComponents(Isegmented, 'border');
     
-    secNeedle = extractSecNeedle(I);
-    otherNeedles = removeSecNeedle(IwithoutBorder, secNeedle);
+    redNeedle = extractSecNeedle(I);
+    [secNeedle, otherNeedles] = separateSecOtherNeedles(...
+        IwithoutBorder, redNeedle);
     otherNeedles = removeNotRelevantComponents(otherNeedles, 'numbers');
 end
 
-function otherNeedles = removeSecNeedle(I, secNeedle)
-    noSecNeedle = I + secNeedle;
+function [secNeedle, otherNeedles] = separateSecOtherNeedles(I, redNeedle)
+    noRedNeedle = I + redNeedle;
     se = strel('line', 3, 3);
-    otherNeedles = imdilate(noSecNeedle, se);
+    otherNeedles = imdilate(noRedNeedle, se);
+    secNeedle = imerode(otherNeedles, se) - I;
 end
 
 function secNeedle = extractSecNeedle(I)

@@ -34,9 +34,9 @@ function plotMinHour(I, minNeedle, hourNeedle)
     figure(); imshow(I), hold on;
 
     xy = [minNeedle.point1; minNeedle.point2];
-    plot(xy(:,1),xy(:,2), 'LineWidth', 2, 'Color', 'green');
+    plot(xy(:, 1), xy(:, 2), 'LineWidth', 2, 'Color', 'green');
     xy = [hourNeedle.point1; hourNeedle.point2];
-    plot(xy(:,1),xy(:,2), 'LineWidth', 2, 'Color', 'blue');
+    plot(xy(:, 1), xy(:, 2), 'LineWidth', 2, 'Color', 'blue');
     
     legend('minute', 'hour');
     hold off;
