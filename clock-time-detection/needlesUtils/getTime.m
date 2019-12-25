@@ -7,12 +7,6 @@ function time = getTime(I, needle, unitsPerCircle)
     time = getAngle(shiftedNeedleCoords) / (2*pi) * unitsPerCircle;
 end
 
-function middlePoint = getMiddlePoint(I)
-    [height, width] = size(rgb2gray(I));
-    middlePoint(1) = width/2;
-    middlePoint(2) = height/2;
-end
-
 function shifted = shiftNeedleCoords(needle, middlePoint)
     p1 = needle.point1;
     p2 = needle.point2;
