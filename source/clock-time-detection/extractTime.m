@@ -3,7 +3,7 @@ function [hour, min, sec] = extractTime(I)
     [secNeedleImage, otherNeedlesImage] = separateNeedles(I);
     [minNeedle, hourNeedle] = detectOtherNeedles(otherNeedlesImage);
     [exist, secNeedle] = detectSecNeedle(secNeedleImage);    
-    
+        
     % Calculate time from the needle lines
     hour = floor(getTime(I, hourNeedle, 12));
     if hour == 0
@@ -15,5 +15,7 @@ function [hour, min, sec] = extractTime(I)
     else
         sec = round(getTime(I, secNeedle, 60));
     end
+    
+    % plotAllNeedles(I, hourNeedle, minNeedle, exist, secNeedle);
 end
 
