@@ -1,4 +1,4 @@
-function plotAndSaveStats(psnrStats, timeStats, K, S, dir)
+function plot_and_save_stats(psnrStats, timeStats, K, S, dir)
     plotAndSavePsnrStats(psnrStats, K, S, dir);
     plotAndSaveTimeStats(timeStats, K, S, dir);
 end

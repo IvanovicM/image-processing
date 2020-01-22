@@ -7,7 +7,7 @@ addpath('../utils/');
 addpath('notchFilter/');
 
 %% Girl Ht
-[girlBefore, girlAfter] = makeGirlHtBetter();
+[girlBefore, girlAfter] = filter_image();
 figure('Name', '[Girl] Before');
 imshow(girlBefore);
 figure('Name', '[Girl] After');

@@ -11,7 +11,7 @@ for num = 1:1
     name = sprintf('../data/dice/dice%d.jpg', num);
     I = im2double(imread(name));
     
-    [blueNumbers, redNumbers] = extractDiceScore(I);
+    [blueNumbers, redNumbers] = extract_dice_score(I);
  
     bString = sprintf(repmat('%d ', 1, length(blueNumbers)), blueNumbers);
     rString = sprintf(repmat('%d ', 1, length(redNumbers)), redNumbers);

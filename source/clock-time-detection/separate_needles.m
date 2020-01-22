@@ -1,4 +1,4 @@
-function [secNeedle, otherNeedles] = separateNeedles(I)
+function [secNeedle, otherNeedles] = separate_needles(I)
     Isegmented = segmentImage(rgb2gray(I));
     IwithoutBorder = removeNotRelevantComponents(Isegmented, 'border');
     

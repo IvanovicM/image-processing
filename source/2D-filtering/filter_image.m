@@ -1,4 +1,4 @@
-function [image, betterImage] = makeGirlHtBetter()
+function [image, betterImage] = filter_image()
     image = im2double(imread('../../sekvence/girl_ht.tif'));
     dir = '../images/girl/';
     

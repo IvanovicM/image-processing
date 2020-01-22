@@ -1,3 +1,10 @@
+%% Be ready
+clear all;
+close all;
+clc;
+
+addpath('../utils/');
+
 %% Init Lena
 dir = '../images/non_local/';
 var = 0.0078;
@@ -30,4 +37,4 @@ for ix = 1 : length(K)
         psnrStats(ix, jx) = psnr(J, Iref);
     end
 end
-plotAndSaveStats(psnrStats, timeStats, K, S, dir);
+plot_and_save_stats(psnrStats, timeStats, K, S, dir);

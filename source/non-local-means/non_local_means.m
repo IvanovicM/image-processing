@@ -1,5 +1,5 @@
-function J = dos_non_local_means (I, K, S, var, h)
-    % DOS_NON_LOCAL_MEANS  Non-local means filtering of the image
+function J = non_local_means (I, K, S, var, h)
+    % NON_LOCAL_MEANS  Non-local means filtering of the image
     %
     %   J = dos_non_local_means(I, K, S, var, h) applies a non-local
     %   means-based filter to the image I and returns the resulting image

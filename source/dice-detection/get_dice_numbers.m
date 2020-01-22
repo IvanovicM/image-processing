@@ -1,4 +1,4 @@
-function numbers = getDiceNumbers(I, exist, components)
+function numbers = get_dice_numbers(I, exist, components)
     if ~exist
         numbers = [];
     else

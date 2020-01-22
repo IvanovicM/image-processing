@@ -1,4 +1,4 @@
-function [exist, components] = extractDice(I, color, toPlotBoundaries)
+function [exist, components] = extract_dice(I, color, toPlotBoundaries)
     colorImagePart = extractColorPart(I, color);
     ISegmented = colorImagePart > 0.23;
     noSmallComponents = removeSmallComponents(ISegmented);

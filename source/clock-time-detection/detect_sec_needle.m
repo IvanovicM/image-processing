@@ -1,4 +1,4 @@
-function [exist, secNeedle] = detectSecNeedle(I)
+function [exist, secNeedle] = detect_sec_needle(I)
     lines = getLines(I, 1);    
     % plotLines(I, lines);
     if length(lines) == 1

@@ -1,4 +1,4 @@
-function allVars = experimentWithImage(I, dir, allK, toPlot)
+function allVars = experiment_for_noise_var(I, dir, allK, toPlot)
     ISqrt = I .^ 2;
     allVars = zeros(size(allK)); varIdx = 1;
     

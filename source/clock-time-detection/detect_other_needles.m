@@ -1,4 +1,4 @@
-function [minNeedle, hourNeedle] = detectOtherNeedles(I)
+function [minNeedle, hourNeedle] = detect_other_needles(I)
     lines = getLines(I, 2);    
     % plotLines(I, lines);
     [minNeedle, hourNeedle] = extractMinHourNeedle(lines);

@@ -1,8 +1,8 @@
-function [hour, min, sec] = extractTime(I)
+function [hour, min, sec] = extract_time(I)
     % Get needles
-    [secNeedleImage, otherNeedlesImage] = separateNeedles(I);
-    [minNeedle, hourNeedle] = detectOtherNeedles(otherNeedlesImage);
-    [exist, secNeedle] = detectSecNeedle(secNeedleImage);    
+    [secNeedleImage, otherNeedlesImage] = separate_needles(I);
+    [minNeedle, hourNeedle] = detect_other_needles(otherNeedlesImage);
+    [exist, secNeedle] = detect_sec_needle(secNeedleImage);    
         
     % Calculate time from the needle lines
     hour = floor(getTime(I, hourNeedle, 12));
