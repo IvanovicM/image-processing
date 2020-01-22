@@ -37,3 +37,11 @@ Here are some of the results of methods implemented in this project.
 | <img src="images/wiener/before.jpg" width="70%"> | <img src="images/wiener/after.jpg" width="70%">|Wiener Filter|
 | <img src="images/non_local_means/before.jpg" width="70%"> | <img src="images/non_local_means/after.jpg" width="70%">|Non-local Means|
 | <img src="images/2D_filtering/before.jpg" width="70%"> | <img src="images/2D_filtering/after.jpg" width="70%">|2D Notch Filter|
+
+## How to run the tests?
+
+To run any test simply go to the directory of the project task you want to test, and type 'test' in the Matlab shell. Note that for some tests you have to have Matlab version 2017 and above.
+
+  ```shell
+  test
+  ```
