@@ -14,3 +14,10 @@ Here are some of the results of methods implemented in this project.
 | <img src="images/non_local_means/before.jpg" width="70%"> | <img src="images/non_local_means/after.jpg" width="70%">|Non-local Means|
 | <img src="images/2D_filtering/before.jpg" width="70%"> | <img src="images/2D_filtering/after.jpg" width="70%">|2D Notch Filter|
 
+## Canny Edge Detector
+
+There is Canny Edge Detector implemented from scratch. You can see one of the results below.
+
+| **Image** | **Edges** |
+|:---:|:---:|
+| <img src="images/canny/camerman.png">| <img src="images/canny/camerman_edges.png">|
