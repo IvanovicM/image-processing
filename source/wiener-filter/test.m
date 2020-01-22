@@ -6,7 +6,7 @@ clc;
 addpath('../utils/');
 
 %% Etf Image
-[etfBefore, etfAfter] = makeEtfBetter('../images/etf/');
+[etfBefore, etfAfter] = apply_wiener('../images/etf/');
 figure('Name', '[ETF] Before');
 imshow(etfBefore);
 figure('Name', '[ETF] After');

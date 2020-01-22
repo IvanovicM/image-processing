@@ -1,4 +1,4 @@
-function [image, betterImage] = makeEtfBetter(dir)
+function [image, betterImage] = apply_wiener(dir)
     image = im2double(imread('../../sekvence/etf_blur.tif'));
     h = im2double(imread('../../sekvence/kernel.tif'));
     saveImage(h, dir, 'kernel.jpg');
