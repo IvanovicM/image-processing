@@ -9,6 +9,19 @@ There is Canny Edge Detector implemented from scratch. You can see one of the re
 |:---:|:---:|
 | <img src="images/canny/camerman.png">| <img src="images/canny/camerman_edges.png">|
 
+## What image improvement methods can I find here?
+
+Here are some of the results of methods implemented in this project.
+
+| **Before** | **After** | **Method** |
+|:---:|:---:|:---:|
+| <img src="images/image_improvement/bristol_before.jpg" width="70%"> | <img src="images/image_improvement/bristol_after.jpg" width="70%">|Histogram Equalization|
+| <img src="images/clhe/before.jpg" width="70%"> | <img src="images/clhe/clhe_w_limit.jpg" width="70%">|Clip Limit Histogram Equalization|
+| <img src="images/image_improvement/enigma_before.jpg" width="70%"> | <img src="images/image_improvement/enigma_after.jpg" width="70%">|Adaptive Median Filter|
+| <img src="images/wiener/before.jpg" width="70%"> | <img src="images/wiener/after.jpg" width="70%">|Wiener Filter|
+| <img src="images/non_local_means/before.jpg" width="70%"> | <img src="images/non_local_means/after.jpg" width="70%">|Non-local Means|
+| <img src="images/2D_filtering/before.jpg" width="70%"> | <img src="images/2D_filtering/after.jpg" width="70%">|2D Notch Filter|
+
 ## Time detection
 
 If you ever needed a program that would tell you what's the time, today is your lucky day. 
@@ -24,19 +37,6 @@ If you ever played a game with dice and needed program that would quickly tell y
 | **Image** | **Detected Dice** | **Dice Circles** |
 |:---:|:---:|:---:|
 |<img src="images/dice/original.jpg" width="50%"> | <img src="images/dice/dice.jpg">|<img src="images/dice/red_die.jpg"> <img src="images/dice/blue_die.jpg">|
-
-## What image improvement methods can I find here?
-
-Here are some of the results of methods implemented in this project.
-
-| **Before** | **After** | **Method** |
-|:---:|:---:|:---:|
-| <img src="images/image_improvement/bristol_before.jpg" width="70%"> | <img src="images/image_improvement/bristol_after.jpg" width="70%">|Histogram Equalization|
-| <img src="images/clhe/before.jpg" width="70%"> | <img src="images/clhe/clhe_w_limit.jpg" width="70%">|Clip Limit Histogram Equalization|
-| <img src="images/image_improvement/enigma_before.jpg" width="70%"> | <img src="images/image_improvement/enigma_after.jpg" width="70%">|Adaptive Median Filter|
-| <img src="images/wiener/before.jpg" width="70%"> | <img src="images/wiener/after.jpg" width="70%">|Wiener Filter|
-| <img src="images/non_local_means/before.jpg" width="70%"> | <img src="images/non_local_means/after.jpg" width="70%">|Non-local Means|
-| <img src="images/2D_filtering/before.jpg" width="70%"> | <img src="images/2D_filtering/after.jpg" width="70%">|2D Notch Filter|
 
 ## How to run the tests?
 
