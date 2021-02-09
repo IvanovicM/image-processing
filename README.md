@@ -3,7 +3,7 @@ Digital image processing Algorithms and their application to the real problems.
 
 ## Canny Edge Detector
 
-There is Canny Edge Detector implemented from scratch. You can see one of the results below.
+There is the Canny Edge Detector implemented from scratch. Below you could see one of the images that the detector has been applied to.
 
 | **Image** | **Edges** |
 |:---:|:---:|
@@ -11,7 +11,7 @@ There is Canny Edge Detector implemented from scratch. You can see one of the re
 
 ## What image improvement methods can I find here?
 
-Here are some of the results of methods implemented in this project.
+Here are some of the results of the methods implemented in this project.
 
 | **Before** | **After** | **Method** |
 |:---:|:---:|:---:|
@@ -32,7 +32,7 @@ If you ever needed a program that would tell you what's the time, today is your 
 
 ## Dice detection
 
-If you ever played a game with dice and needed program that would quickly tell you your score, today is your lucky day. 
+If you ever played a game with dice and needed a program that would quickly tell you your score, today is your lucky day. 
 
 | **Image** | **Detected Dice** | **Dice Circles** |
 |:---:|:---:|:---:|
@@ -40,7 +40,7 @@ If you ever played a game with dice and needed program that would quickly tell y
 
 ## How to run the tests?
 
-To run any test simply go to the directory of the project task you want to test, and type 'test' in the Matlab shell. Note that for some tests you have to have Matlab version 2017 and above.
+To run any test, simply go to the directory of the project task you want to test, and type in 'test' in the Matlab shell. Note that for some of the tests you have to have a Matlab version 2017 and above.
 
   ```shell
   test
